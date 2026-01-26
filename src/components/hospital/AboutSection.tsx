@@ -82,7 +82,7 @@ const AboutSection = () => {
                     <Award className="text-accent" size={32} />
                   </div>
                   <div>
-                    <p className="text-2xl font-bold text-primary">15+</p>
+                    <p className="text-2xl font-bold text-primary">3+</p>
                     <p className="text-muted-foreground text-sm">
                       Years of Excellence
                     </p>
