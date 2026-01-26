@@ -28,7 +28,7 @@ const DoctorSection = () => {
               {/* Image Container */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="/doc.png"
+                  src="./doc.png"
                   alt={doctor.name}
                   className="w-full h-[500px] object-cover"
                 />
