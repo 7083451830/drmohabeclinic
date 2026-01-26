@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, List } from "lucide-react"; // List used for pain menu
 import { hospitalData } from "@/data/hospitalData";
 import { Button } from "@/components/ui/button";
-import MobilePainMenu from "./MobilePainMenu";  // ✅ STEP 1: Added import
+import MobilePainMenu from "./MobilePainMenu";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [openMenu, setOpenMenu] = useState(false);  // ✅ STEP 2: State already exists
+  const [openMenu, setOpenMenu] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,10 +19,12 @@ const Header = () => {
 
   const handleNavClick = (href: string) => {
     setIsMobileMenuOpen(false);
-    setOpenMenu(false);  // ✅ Close pain menu too
+    setOpenMenu(false);
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const yOffset = -72; // header height
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 
@@ -96,9 +98,9 @@ const Header = () => {
               </Button>
             </div>
 
-            {/* Mobile Menu Buttons - SIDE BY SIDE */}
+            {/* Mobile Buttons */}
             <div className="lg:hidden flex items-center gap-2">
-              {/* Regular Mobile Menu (hamburger) */}
+              {/* Mobile Nav */}
               <button
                 className="p-2"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -116,20 +118,23 @@ const Header = () => {
                   />
                 )}
               </button>
-              
-              {/* NEW Pain Menu Button */}
+
+              {/* Pain Menu */}
               <button
-                onClick={() => setOpenMenu(true)}  // ✅ STEP 3: Pain menu trigger
-                className="p-2 lg:hidden"
-                aria-label="Pain types menu"
+                onClick={() => setOpenMenu(true)}
+                className="p-2"
+                aria-label="Open pain menu"
               >
-                <Menu size={26} className={isScrolled ? "text-foreground" : "text-primary-foreground"} />
+                <List
+                  size={26}
+                  className={isScrolled ? "text-foreground" : "text-primary-foreground"}
+                />
               </button>
             </div>
           </div>
         </div>
 
-        {/* Original Mobile Menu (dropdown) */}
+        {/* Mobile Nav Dropdown */}
         <div
           className={`lg:hidden fixed inset-x-0 top-[72px] bg-background shadow-lg transition-all duration-300 ${
             isMobileMenuOpen
@@ -170,11 +175,8 @@ const Header = () => {
         </div>
       </header>
 
-      {/* ✅ STEP 4: Mount Pain Menu */}
-      <MobilePainMenu
-        open={openMenu}
-        onClose={() => setOpenMenu(false)}
-      />
+      {/* Pain Menu */}
+      <MobilePainMenu open={openMenu} onClose={() => setOpenMenu(false)} />
     </>
   );
 };
