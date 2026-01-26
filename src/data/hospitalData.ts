@@ -31,36 +31,24 @@ export const hospitalData = {
   services: [
     {
       id: 1,
-      title: "Cardiology",
-      description: "Comprehensive heart care including diagnostics, treatment, and cardiac rehabilitation.",
-      icon: "Heart"
-    },
-    {
-      id: 2,
       title: "Pain Management",
       description: "Advanced pain management techniques for chronic and acute pain conditions.",
       icon: "Activity"
     },
     {
-      id: 3,
-      title: "Orthopedics",
-      description: "Expert treatment for bone, joint, and muscle disorders with modern surgical techniques.",
-      icon: "Bone"
-    },
-    {
-      id: 4,
+      id: 2,
       title: "General Medicine",
       description: "Comprehensive primary care and treatment for common health conditions.",
       icon: "Stethoscope"
     },
     {
-      id: 5,
+      id: 3,
       title: "Diagnostics",
       description: "State-of-the-art diagnostic services including imaging and laboratory tests.",
       icon: "Microscope"
     },
     {
-      id: 6,
+      id: 4,
       title: "Emergency Care",
       description: "Round-the-clock emergency medical services with rapid response teams.",
       icon: "Ambulance"
