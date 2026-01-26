@@ -1,6 +1,6 @@
 // All hospital data is centralized here for easy editing
 export const hospitalData = {
-  name: "SANVEDNA PAIN CLINIC",
+  name: "SANVEDNA PAIN MANAGEMENT CLINIC",
   tagline: "Excellence in Healthcare",
   description: "A CENTER FOR SPINE,JONT & NEUROPAIN.",
   
