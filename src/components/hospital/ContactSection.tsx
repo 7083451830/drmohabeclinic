@@ -1,11 +1,4 @@
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Clock, 
-  MessageCircle,
-  Calendar
-} from "lucide-react";
+import { MapPin, Phone, Mail, Clock, MessageCircle, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { hospitalData } from "@/data/hospitalData";
 
@@ -50,10 +43,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">Phone</h4>
-                  <a 
-                    href={`tel:${hospitalData.contact.phone}`}
-                    className="text-accent hover:underline"
-                  >
+                  <a href={`tel:${hospitalData.contact.phone}`} className="text-accent hover:underline">
                     {hospitalData.contact.phone}
                   </a>
                 </div>
@@ -66,10 +56,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">Email</h4>
-                  <a 
-                    href={`mailto:${hospitalData.contact.email}`}
-                    className="text-accent hover:underline"
-                  >
+                  <a href={`mailto:${hospitalData.contact.email}`} className="text-accent hover:underline">
                     {hospitalData.contact.email || "Not Provided"}
                   </a>
                 </div>
@@ -83,7 +70,6 @@ const ContactSection = () => {
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">OPD Timings</h4>
                   <p className="text-muted-foreground">{hospitalData.timings.opd}</p>
-                  <p className="text-muted-foreground">{hospitalData.timings.sunday}</p>
                   <p className="text-accent font-medium">{hospitalData.timings.emergency}</p>
                 </div>
               </div>
@@ -98,11 +84,11 @@ const ContactSection = () => {
                 </Button>
               </a>
               <a
-                href={`https://wa.me/${hospitalData.contact.whatsapp}?text=Hello, I would like to book an appointment.`}
+                href={`https://wa.me/91${hospitalData.contact.whatsapp}?text=Hello%20Sanvedna%20Pain%20Clinic,%20I%20would%20like%20to%20book%20an%20appointment.`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button className="bg-whatsapp text-whatsapp-foreground hover:bg-whatsapp/90">
+                <Button className="bg-green-500 hover:bg-green-600 text-white">
                   <MessageCircle className="mr-2" size={18} />
                   WhatsApp
                 </Button>
@@ -110,46 +96,17 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* Map */}
+          {/* Map - YOUR IFRAME ✅ */}
           <div className="relative">
-            {/* Responsive Map */}
-            <div
-              className="bg-card rounded-2xl overflow-hidden shadow-xl border border-border w-full"
-              style={{ paddingBottom: "56.25%", position: "relative" }}
-            >
+            <div className="w-full h-[400px] md:h-[500px] rounded-2xl shadow-2xl overflow-hidden border border-border">
               <iframe
                 src={hospitalData.contact.mapEmbed}
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                  border: 0,
-                }}
-                allowFullScreen
+                className="w-full h-full border-0"
                 loading="lazy"
+                allowFullScreen
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Hospital Location Map"
+                title="Sanvedna Pain Management Clinic - Madhura Medical Stores, Gondia"
               />
-            </div>
-
-            {/* Floating Book Appointment Card */}
-            <div className="absolute -bottom-6 left-6 right-6 bg-card p-4 rounded-xl shadow-xl border border-border">
-              <div className="flex items-center justify-between flex-wrap gap-4">
-                <div className="flex items-center gap-3">
-                  <Calendar className="text-accent" size={24} />
-                  <div>
-                    <p className="font-semibold text-foreground">Book Appointment</p>
-                    <p className="text-sm text-muted-foreground">Schedule your visit today</p>
-                  </div>
-                </div>
-                <a href={`tel:${hospitalData.contact.phone}`}>
-                  <Button className="bg-accent text-accent-foreground hover:bg-accent/90">
-                    Book Now
-                  </Button>
-                </a>
-              </div>
             </div>
           </div>
         </div>
