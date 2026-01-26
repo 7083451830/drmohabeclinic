@@ -58,7 +58,7 @@ const HeroSection = () => {
 
           {/* Tagline */}
           <p className="text-xl md:text-2xl font-light mb-8 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.4s" }}>
-            {hospitalData.tagline} — Dedicated to your health and comfort with advanced medical care.
+            {hospitalData.tagline} — Dedicated to your Pain Management and Comfort through advance medical Care
           </p>
 
           {/* CTA Buttons */}
