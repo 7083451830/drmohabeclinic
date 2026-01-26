@@ -26,10 +26,14 @@ const AboutSection = () => {
             <p className="text-muted-foreground mb-8">
              
         Sanvedana Pain Management Clinic is a dedicated center for the diagnosis and treatment of acute and chronic pain conditions, committed to improving quality of life through evidence-based, compassionate, and patient-centered care.  
-        We specialize in interventional pain management and advanced non-surgical techniques to treat a wide range of painful disorders, including spine-related pain, neuropathic pain, joint pain, cancer pain, post-surgical pain, headache,migraine, frozen shoulder, and musculoskeletal conditions. Our approach focuses not only on relieving pain but also on restoring function and helping patients return to their daily activities with confidence.
+        We specialize in interventional pain management and advanced non-surgical techniques to treat a wide range of painful disorders, including spine-related pain, neuropathic pain, joint pain, cancer pain, post-surgical pain, headache,migraine, frozen shoulder, and musculoskeletal conditions.
+            </p>
+            <p className="text-muted-foreground mb-8">
+              Our approach focuses not only on relieving pain but also on restoring function and helping patients return to their daily activities with confidence.
           At Sanvedana, we believe that every patient’s pain is unique. That’s why we design individualized treatment plans based on thorough evaluation, modern imaging guidance, and the latest pain management protocols.
-       clinic follows the principles of FIPM (Fellowship in Interventional Pain Management), ensuring that all procedures are performed with high standards of safety, precision, and clinical excellence.With a combination of medical therapy, minimally invasive procedures, rehabilitation guidance, and lifestyle counseling, we aim to deliver long-lasting relief and holistic healing.
-      Your comfort. Your dignity. Your relief. That is our mission.
+       clinic follows the principles of FIPM (Fellowship in Interventional Pain Management), ensuring that all procedures are performed with high standards of safety, precision, and clinical excellence.With a combination of medical therapy, minimally invasive procedures, rehabilitation guidance, and lifestyle counseling, we aim to deliver long-lasting relief and holistic healing.</p>
+       <p className="text-muted-foreground mb-8">
+            Your comfort. Your dignity. Your relief. That is our mission.
             </p>
 
             {/* Features */}
