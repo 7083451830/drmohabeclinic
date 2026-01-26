@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { hospitalData } from "@/data/hospitalData";
 import { Button } from "@/components/ui/button";
-import MobilePainMenu from "./MobilePainMenu";
-
+import MobilePainMenu from "./MobilePainMenu";  // ✅ STEP 1: Added import
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);  // ✅ STEP 2: State already exists
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +19,7 @@ const Header = () => {
 
   const handleNavClick = (href: string) => {
     setIsMobileMenuOpen(false);
+    setOpenMenu(false);  // ✅ Close pain menu too
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -26,38 +27,117 @@ const Header = () => {
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="container-custom">
-        <div className="flex items-center justify-between py-4">
-          {/* Logo */}
-          <a
-            href="#home"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick("#home");
-            }}
-            className="flex items-center gap-2"
-          >
-            <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-              <span className="text-accent-foreground font-bold text-xl">M</span>
-            </div>
-            <span
-              className={`font-display font-bold text-xl ${
-                isScrolled ? "text-primary" : "text-primary-foreground"
-              }`}
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? "bg-background/95 backdrop-blur-md shadow-lg"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="container-custom">
+          <div className="flex items-center justify-between py-4">
+            {/* Logo */}
+            <a
+              href="#home"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick("#home");
+              }}
+              className="flex items-center gap-2"
             >
-              {hospitalData.name}
-            </span>
-          </a>
+              <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
+                <span className="text-accent-foreground font-bold text-xl">M</span>
+              </div>
+              <span
+                className={`font-display font-bold text-xl ${
+                  isScrolled ? "text-primary" : "text-primary-foreground"
+                }`}
+              >
+                {hospitalData.name}
+              </span>
+            </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center gap-8">
+              {hospitalData.navigation.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(item.href);
+                  }}
+                  className={`font-medium transition-colors hover:text-accent ${
+                    isScrolled ? "text-foreground" : "text-primary-foreground"
+                  }`}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+
+            {/* CTA Buttons */}
+            <div className="hidden lg:flex items-center gap-4">
+              <a
+                href={`tel:${hospitalData.contact.phone}`}
+                className={`flex items-center gap-2 font-semibold transition-colors ${
+                  isScrolled ? "text-accent" : "text-primary-foreground"
+                }`}
+              >
+                <Phone size={18} />
+                {hospitalData.contact.phone}
+              </a>
+              <Button
+                onClick={() => handleNavClick("#contact")}
+                className="bg-accent text-accent-foreground hover:bg-accent/90"
+              >
+                Book Appointment
+              </Button>
+            </div>
+
+            {/* Mobile Menu Buttons - SIDE BY SIDE */}
+            <div className="lg:hidden flex items-center gap-2">
+              {/* Regular Mobile Menu (hamburger) */}
+              <button
+                className="p-2"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label="Toggle menu"
+              >
+                {isMobileMenuOpen ? (
+                  <X
+                    size={28}
+                    className={isScrolled ? "text-foreground" : "text-primary-foreground"}
+                  />
+                ) : (
+                  <Menu
+                    size={28}
+                    className={isScrolled ? "text-foreground" : "text-primary-foreground"}
+                  />
+                )}
+              </button>
+              
+              {/* NEW Pain Menu Button */}
+              <button
+                onClick={() => setOpenMenu(true)}  // ✅ STEP 3: Pain menu trigger
+                className="p-2 lg:hidden"
+                aria-label="Pain types menu"
+              >
+                <Menu size={26} className={isScrolled ? "text-foreground" : "text-primary-foreground"} />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Original Mobile Menu (dropdown) */}
+        <div
+          className={`lg:hidden fixed inset-x-0 top-[72px] bg-background shadow-lg transition-all duration-300 ${
+            isMobileMenuOpen
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 -translate-y-4 pointer-events-none"
+          }`}
+        >
+          <nav className="container-custom py-6 flex flex-col gap-4">
             {hospitalData.navigation.map((item) => (
               <a
                 key={item.label}
@@ -66,95 +146,36 @@ const Header = () => {
                   e.preventDefault();
                   handleNavClick(item.href);
                 }}
-                className={`font-medium transition-colors hover:text-accent ${
-                  isScrolled ? "text-foreground" : "text-primary-foreground"
-                }`}
+                className="text-foreground font-medium py-2 border-b border-border transition-colors hover:text-accent"
               >
                 {item.label}
               </a>
             ))}
+            <div className="flex flex-col gap-3 mt-4">
+              <a
+                href={`tel:${hospitalData.contact.phone}`}
+                className="flex items-center gap-2 text-accent font-semibold"
+              >
+                <Phone size={18} />
+                {hospitalData.contact.phone}
+              </a>
+              <Button
+                onClick={() => handleNavClick("#contact")}
+                className="bg-accent text-accent-foreground hover:bg-accent/90 w-full"
+              >
+                Book Appointment
+              </Button>
+            </div>
           </nav>
-
-          {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center gap-4">
-            <a
-              href={`tel:${hospitalData.contact.phone}`}
-              className={`flex items-center gap-2 font-semibold transition-colors ${
-                isScrolled ? "text-accent" : "text-primary-foreground"
-              }`}
-            >
-              <Phone size={18} />
-              {hospitalData.contact.phone}
-            </a>
-            <Button
-              onClick={() => handleNavClick("#contact")}
-              className="bg-accent text-accent-foreground hover:bg-accent/90"
-            >
-              Book Appointment
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? (
-              <X
-                size={28}
-                className={isScrolled ? "text-foreground" : "text-primary-foreground"}
-              />
-            ) : (
-              <Menu
-                size={28}
-                className={isScrolled ? "text-foreground" : "text-primary-foreground"}
-              />
-            )}
-          </button>
         </div>
-      </div>
+      </header>
 
-      {/* Mobile Menu */}
-      <div
-        className={`lg:hidden fixed inset-x-0 top-[72px] bg-background shadow-lg transition-all duration-300 ${
-          isMobileMenuOpen
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 -translate-y-4 pointer-events-none"
-        }`}
-      >
-        <nav className="container-custom py-6 flex flex-col gap-4">
-          {hospitalData.navigation.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick(item.href);
-              }}
-              className="text-foreground font-medium py-2 border-b border-border transition-colors hover:text-accent"
-            >
-              {item.label}
-            </a>
-          ))}
-          <div className="flex flex-col gap-3 mt-4">
-            <a
-              href={`tel:${hospitalData.contact.phone}`}
-              className="flex items-center gap-2 text-accent font-semibold"
-            >
-              <Phone size={18} />
-              {hospitalData.contact.phone}
-            </a>
-            <Button
-              onClick={() => handleNavClick("#contact")}
-              className="bg-accent text-accent-foreground hover:bg-accent/90 w-full"
-            >
-              Book Appointment
-            </Button>
-          </div>
-        </nav>
-      </div>
-    </header>
+      {/* ✅ STEP 4: Mount Pain Menu */}
+      <MobilePainMenu
+        open={openMenu}
+        onClose={() => setOpenMenu(false)}
+      />
+    </>
   );
 };
 
