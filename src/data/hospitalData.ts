@@ -21,7 +21,8 @@ export const hospitalData = {
     whatsapp:  "8446721259",
     email: "",
     address: "Arsh Complex, near Madhura medical,Awanti bai Square, Gondiamap",
-     mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.3887!2d80.7212!3d21.4606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4d8b7b678d0e3%3A0x1234567890abcdef!2sMadhura%20Medical%20Stores!5e0!3m2!1sen!2sin!4v1691000000000!5m2!1sen!2sin"
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.703612208566!2d80.1970944149804!3d21.472575686252955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4d8d1fcbec9c7%3A0x365f66a1e4e3c50!2sMadhura%20Medical%20Stores!5e0!3m2!1sen!2sin!4v1706500000000!5m2!1sen!2sin"
+
   },
   
   timings: {
