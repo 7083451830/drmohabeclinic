@@ -92,12 +92,12 @@ const DoctorSection = () => {
             <div className="grid grid-cols-3 gap-4">
               <div className="bg-card p-4 rounded-xl border border-border text-center">
                 <Briefcase className="text-accent mx-auto mb-2" size={24} />
-                <p className="text-2xl font-bold text-primary">15+</p>
+                <p className="text-2xl font-bold text-primary">3+</p>
                 <p className="text-sm text-muted-foreground">Years Exp.</p>
               </div>
               <div className="bg-card p-4 rounded-xl border border-border text-center">
                 <Award className="text-accent mx-auto mb-2" size={24} />
-                <p className="text-2xl font-bold text-primary">5000+</p>
+                <p className="text-2xl font-bold text-primary">1000+</p>
                 <p className="text-sm text-muted-foreground">Procedures</p>
               </div>
               <div className="bg-card p-4 rounded-xl border border-border text-center">
