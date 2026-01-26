@@ -35,20 +35,15 @@ export const hospitalData = {
       description: "Advanced pain management techniques for chronic and acute pain conditions.",
       icon: "Activity"
     },
+   
     {
       id: 2,
-      title: "General Medicine",
-      description: "Comprehensive primary care and treatment for common health conditions.",
-      icon: "Stethoscope"
-    },
-    {
-      id: 3,
       title: "Diagnostics",
       description: "State-of-the-art diagnostic services including imaging and laboratory tests.",
       icon: "Microscope"
     },
     {
-      id: 4,
+      id: 3,
       title: "Emergency Care",
       description: "Round-the-clock emergency medical services with rapid response teams.",
       icon: "Ambulance"
