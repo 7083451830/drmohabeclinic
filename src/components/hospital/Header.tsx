@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { hospitalData } from "@/data/hospitalData";
 import { Button } from "@/components/ui/button";
+import MobilePainMenu from "./MobilePainMenu";
+
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
