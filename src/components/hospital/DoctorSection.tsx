@@ -1,6 +1,6 @@
- { Award, GraduationCap, Briefcase, CheckCircle } from "lucide-react";
+import { Award, GraduationCap, Briefcase, CheckCircle } from "lucide-react";
 import { hospitalData } from "@/data/hospitalData";
-
+import docImage from './doc.png';  // ← ADD THIS
 const DoctorSection = () => {
   const { doctor } = hospitalData;
 
@@ -28,7 +28,7 @@ const DoctorSection = () => {
               {/* Image Container */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="./doc.png"
+                   src={docImage} 
                   alt={doctor.name}
                   className="w-full h-[500px] object-cover"
                 />
