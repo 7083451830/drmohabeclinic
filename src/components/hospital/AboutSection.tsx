@@ -2,9 +2,9 @@ import { CheckCircle, Award, Users, Clock } from "lucide-react";
 import { hospitalData } from "@/data/hospitalData";
 
 const AboutSection = () => {
-  const features = [
-    { icon: Award, text: "15+ Years of Excellence" },
-    { icon: Users, text: "50,000+ Happy Patients" },
+  const features = 
+    { icon: Award, text: "3+ Years of Excellence" },
+    { icon: Users, text: "10,000+ Happy Patients" },
     { icon: Clock, text: "24/7 Emergency Care" },
   ];
 
