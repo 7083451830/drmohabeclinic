@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Phone, List } from "lucide-react"; // List used for pain menu
+import { Phone, List } from "lucide-react"; // Only icons we need
 import { hospitalData } from "@/data/hospitalData";
 import { Button } from "@/components/ui/button";
 import MobilePainMenu from "./MobilePainMenu";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [openMenu, setOpenMenu] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false); // Only state for pain menu
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,11 +17,10 @@ const Header = () => {
   }, []);
 
   const handleNavClick = (href: string) => {
-    setIsMobileMenuOpen(false);
-    setOpenMenu(false);
+    setOpenMenu(false); // Close pain menu on nav click
     const element = document.querySelector(href);
     if (element) {
-      const yOffset = -72; // header height
+      const yOffset = -72; // header height offset
       const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: "smooth" });
     }
@@ -100,26 +98,7 @@ const Header = () => {
 
             {/* Mobile Buttons */}
             <div className="lg:hidden flex items-center gap-2">
-              {/* Mobile Nav */}
-              <button
-                className="p-2"
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                aria-label="Toggle menu"
-              >
-                {isMobileMenuOpen ? (
-                  <X
-                    size={28}
-                    className={isScrolled ? "text-foreground" : "text-primary-foreground"}
-                  />
-                ) : (
-                  <Menu
-                    size={28}
-                    className={isScrolled ? "text-foreground" : "text-primary-foreground"}
-                  />
-                )}
-              </button>
-
-              {/* Pain Menu */}
+              {/* Pain Menu Button */}
               <button
                 onClick={() => setOpenMenu(true)}
                 className="p-2"
@@ -133,49 +112,9 @@ const Header = () => {
             </div>
           </div>
         </div>
-
-        {/* Mobile Nav Dropdown */}
-        <div
-          className={`lg:hidden fixed inset-x-0 top-[72px] bg-background shadow-lg transition-all duration-300 ${
-            isMobileMenuOpen
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 -translate-y-4 pointer-events-none"
-          }`}
-        >
-          <nav className="container-custom py-6 flex flex-col gap-4">
-            {hospitalData.navigation.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick(item.href);
-                }}
-                className="text-foreground font-medium py-2 border-b border-border transition-colors hover:text-accent"
-              >
-                {item.label}
-              </a>
-            ))}
-            <div className="flex flex-col gap-3 mt-4">
-              <a
-                href={`tel:${hospitalData.contact.phone}`}
-                className="flex items-center gap-2 text-accent font-semibold"
-              >
-                <Phone size={18} />
-                {hospitalData.contact.phone}
-              </a>
-              <Button
-                onClick={() => handleNavClick("#contact")}
-                className="bg-accent text-accent-foreground hover:bg-accent/90 w-full"
-              >
-                Book Appointment
-              </Button>
-            </div>
-          </nav>
-        </div>
       </header>
 
-      {/* Pain Menu */}
+      {/* Pain Menu Side Panel */}
       <MobilePainMenu open={openMenu} onClose={() => setOpenMenu(false)} />
     </>
   );
