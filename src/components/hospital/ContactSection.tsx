@@ -70,7 +70,7 @@ const ContactSection = () => {
                     href={`mailto:${hospitalData.contact.email}`}
                     className="text-accent hover:underline"
                   >
-                    {hospitalData.contact.email}
+                    {hospitalData.contact.email || "Not Provided"}
                   </a>
                 </div>
               </div>
@@ -112,21 +112,29 @@ const ContactSection = () => {
 
           {/* Map */}
           <div className="relative">
-            <div className="bg-card rounded-2xl overflow-hidden shadow-xl border border-border h-full min-h-[400px]">
+            {/* Responsive Map */}
+            <div
+              className="bg-card rounded-2xl overflow-hidden shadow-xl border border-border w-full"
+              style={{ paddingBottom: "56.25%", position: "relative" }}
+            >
               <iframe
                 src={hospitalData.contact.mapEmbed}
-                width="100%"
-                height="100%"
-                style={{ border: 0, minHeight: "400px" }}
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  border: 0,
+                }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Hospital Location Map"
-                className="grayscale-[20%]"
               />
             </div>
 
-            {/* Floating Card */}
+            {/* Floating Book Appointment Card */}
             <div className="absolute -bottom-6 left-6 right-6 bg-card p-4 rounded-xl shadow-xl border border-border">
               <div className="flex items-center justify-between flex-wrap gap-4">
                 <div className="flex items-center gap-3">
