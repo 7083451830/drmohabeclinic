@@ -21,7 +21,7 @@ export const hospitalData = {
     whatsapp:  "8446721259",
     email: "sanvednapainmanagmentclinic@gmail.com",
     address: "Arsh Complex, near Madhura medical,Awanti bai Square, Gondia",
-    mapEmbed: "https://maps.app.goo.gl/ZgX4nQzBeT8D2KQD7?g_st=com.google.maps.preview.copy" // ✅ Your iframe URL
+    mapEmbed: "https://maps.google.com/maps?q=Arsh%20complex,%20madhura%20medical,%20Gondia&t=&z=14&ie=UTF8&iwloc=&output=embed" // ✅ Your iframe URL
   },
   
   timings: {
