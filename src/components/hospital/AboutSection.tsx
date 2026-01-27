@@ -15,26 +15,32 @@ const AboutSection = () => {
           {/* Left Content */}
           <div className="order-2 lg:order-1">
             <span className="text-accent font-semibold text-sm uppercase tracking-wider">
+                18   <div className="order-2 lg:order-1">
+
+  19     {/* Floating Logo Above Heading */}
+  20     <div className="flex justify-center mb-6 relative">
+  21       <div className="relative">
+  22         <img 
+  23           src="/Logo.png" 
+  24           alt="Clinic Logo" 
+  25           className="h-24 w-auto mx-auto relative z-10" 
+  26         />
+  27         <div 
+  28           className="absolute inset-0 w-32 h-32 bg-accent/20 rounded-full blur-2xl mx-auto" 
+  29         />
+  30       </div>
+  31     </div>
+
+  32     <span className="text-accent font-semibold text-sm uppercase tracking-wider">
+  33       About Us
+  34     </span>
+  35     <h2 className="section-title mt-2">
+  36       Welcome to {hospitalData.name}
+  37     </h2>
+                  
               About Us
               
-              {/* Left Content */}
-<div className="order-2 lg:order-1">
-
-  {/* Floating Logo Above Heading */}
-  <div className="flex justify-center mb-6 relative">
-    <div className="relative">
-      <img 
-        
-        <img src="/Logo.png" alt="Clinic Logo" className="h-24 w-auto" />
-        alt="Clinic Logo" 
-        className="h-24 w-auto mx-auto relative z-10" 
-      />
-      <div 
-        className="absolute inset-0 w-32 h-32 bg-accent/20 rounded-full blur-2xl mx-auto" 
-      />
-    </div>
-  </div>
-
+              
   <span className="text-accent font-semibold text-sm uppercase tracking-wider">
     About Us
   </span>
