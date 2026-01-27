@@ -16,6 +16,31 @@ const AboutSection = () => {
           <div className="order-2 lg:order-1">
             <span className="text-accent font-semibold text-sm uppercase tracking-wider">
               About Us
+              
+              {/* Left Content */}
+<div className="order-2 lg:order-1">
+
+  {/* Floating Logo Above Heading */}
+  <div className="flex justify-center mb-6 relative">
+    <div className="relative">
+      <img 
+        
+        <img src="/Logo.png" alt="Clinic Logo" className="h-24 w-auto" />
+        alt="Clinic Logo" 
+        className="h-24 w-auto mx-auto relative z-10" 
+      />
+      <div 
+        className="absolute inset-0 w-32 h-32 bg-accent/20 rounded-full blur-2xl mx-auto" 
+      />
+    </div>
+  </div>
+
+  <span className="text-accent font-semibold text-sm uppercase tracking-wider">
+    About Us
+  </span>
+  <h2 className="section-title mt-2">
+    Welcome to {hospitalData.name}
+  </h2>
             </span>
             <h2 className="section-title mt-2">
               Welcome to {hospitalData.name}
