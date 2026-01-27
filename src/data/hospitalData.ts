@@ -26,6 +26,7 @@ export const hospitalData = {
   
   timings: {
     opd: "Mon - Sat: 11:00 AM - 4:00 PM",
+    emergency: "24/7 Emergency Available",
   },
   
   services: [
