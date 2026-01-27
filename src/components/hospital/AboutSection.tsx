@@ -21,7 +21,7 @@ const AboutSection = () => {
   20     <div className="flex justify-center mb-6 relative">
   21       <div className="relative">
   22         <img 
-  23           src="/Logo.png" 
+  23           src="logo.png" 
   24           alt="Clinic Logo" 
   25           className="h-24 w-auto mx-auto relative z-10" 
   26         />
