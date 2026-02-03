@@ -1,6 +1,6 @@
 // All hospital data is centralized here for easy editing
 export const hospitalData = {
-  name: "SANVEDNA PAIN MANAGEMENT CLINIC",
+  name: "SANVEDANA PAIN MANAGEMENT CLINIC",
   tagline: "Excellence in Healthcare",
   description: "A CENTER FOR SPINE,JONT & NEUROPAIN.",
   
@@ -19,7 +19,7 @@ export const hospitalData = {
   contact: {
     phone: "+91 8446721259",
     whatsapp:  "8446721259",
-    email: "sanvednapainmanagmentclinic@gmail.com",
+    email: "sanvedanapainmanagmentclinic@gmail.com",
     address: "Arsh Complex, near Madhura medical,Awanti bai Square, Gondia",
     mapEmbed: "https://maps.google.com/maps?q=Arsh%20complex,%20madhura%20medical,%20Gondia&t=&z=14&ie=UTF8&iwloc=&output=embed" // ✅ Your iframe URL
   },
