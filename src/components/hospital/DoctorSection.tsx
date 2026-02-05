@@ -1,6 +1,6 @@
 import { Award, GraduationCap, Briefcase, CheckCircle } from "lucide-react";
 import { hospitalData } from "@/data/hospitalData";
-import docImage from './doc.png';  // ← ADD THIS
+import docImage from './doc.png.jpeg';  // ← ADD THIS
 const DoctorSection = () => {
   const { doctor } = hospitalData;
 
