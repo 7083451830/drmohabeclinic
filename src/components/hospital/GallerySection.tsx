@@ -1,42 +1,34 @@
 import { useState } from "react";
 import { X, ZoomIn } from "lucide-react";
+import gallery1 from "@/assets/gallery-1.jpeg";
+import gallery2 from "@/assets/gallery-2.jpeg";
+import gallery3 from "@/assets/gallery-3.png";
+import gallery4 from "@/assets/gallery-4.jpeg";
 
 const galleryImages = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    alt: "Hospital Reception",
-    category: "Interior"
+    src: gallery1,
+    alt: "SI Joint MIPSI for SI Arthropathy",
+    category: "Procedure"
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    alt: "Medical Equipment",
-    category: "Equipment"
+    src: gallery2,
+    alt: "Celiac Plexus Neurolysis for Chronic Pancreatitis",
+    category: "Procedure"
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    alt: "Patient Room",
-    category: "Rooms"
+    src: gallery3,
+    alt: "Ozone Disc Nucleolysis for Back Pain",
+    category: "Procedure"
   },
   {
     id: 4,
-    src: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    alt: "Laboratory",
-    category: "Lab"
-  },
-  {
-    id: 5,
-    src: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    alt: "Surgery Room",
-    category: "Surgery"
-  },
-  {
-    id: 6,
-    src: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    alt: "Hospital Corridor",
-    category: "Interior"
+    src: gallery4,
+    alt: "Lumbar Sympathectomy for PVD",
+    category: "Procedure"
   },
 ];
 
