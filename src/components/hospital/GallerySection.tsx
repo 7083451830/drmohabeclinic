@@ -4,6 +4,7 @@ import gallery1 from "@/assets/gallery-1.jpeg";
 import gallery2 from "@/assets/gallery-2.jpeg";
 import gallery3 from "@/assets/gallery-3.png";
 import gallery4 from "@/assets/gallery-4.jpeg";
+import gallery5 from "@/assets/gallery-5.jpeg";
 
 const galleryImages = [
   {
@@ -28,6 +29,12 @@ const galleryImages = [
     id: 4,
     src: gallery4,
     alt: "Lumbar Sympathectomy for PVD",
+    category: "Procedure"
+  },
+  {
+    id: 5,
+    src: gallery5,
+    alt: "Botox Injection for CRPS",
     category: "Procedure"
   },
 ];
