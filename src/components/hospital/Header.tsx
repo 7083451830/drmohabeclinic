@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { Phone, List } from "lucide-react"; // Only icons we need
+import { Phone, List } from "lucide-react";
 import { hospitalData } from "@/data/hospitalData";
+import clinicLogo from "@/assets/clinic-logo.jpeg";
 import { Button } from "@/components/ui/button";
 import MobilePainMenu from "./MobilePainMenu";
 
@@ -46,9 +47,7 @@ const Header = () => {
               }}
               className="flex items-center gap-2"
             >
-              <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-xl">M</span>
-              </div>
+              <img src={clinicLogo} alt="Sanvedana Pain Clinic Logo" className="w-10 h-10 rounded-lg object-contain" />
               <span
                 className={`font-display font-bold text-xl ${
                   isScrolled ? "text-primary" : "text-primary-foreground"

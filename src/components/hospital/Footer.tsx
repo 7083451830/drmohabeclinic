@@ -1,3 +1,4 @@
+import clinicLogo from "@/assets/clinic-logo.jpeg";
 import { 
   MapPin, 
   Phone, 
@@ -40,9 +41,7 @@ const Footer = () => {
           {/* About Column */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-xl">M</span>
-              </div>
+              <img src={clinicLogo} alt="Sanvedana Pain Clinic Logo" className="w-10 h-10 rounded-lg object-contain" />
               <span className="font-display font-bold text-xl">{hospitalData.name}</span>
             </div>
             <p className="text-primary-foreground/80 mb-6">

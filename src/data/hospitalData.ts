@@ -2,14 +2,14 @@
 export const hospitalData = {
   name: "SANVEDANA PAIN MANAGEMENT CLINIC",
   tagline: "Excellence in Healthcare",
-  description: "A CENTER FOR SPINE,JONT & NEUROPAIN.",
+  description: "A CENTER FOR SPINE, JOINT & NEUROPAIN.",
   
   doctor: {
     name: "Dr. Shubhada Jade(Mohabe)",
     degrees: "MBBS, MD,FIPM",
     specialization: "Pain Physician,FIPM",
     experience: "3+ Years of Experience",
-    description: "Dr. Shubhada Jade(Mohabe) has done MBBBS MD Anaesthesia ,Passionate about her clinical skills... Also done Fellowshp in Pain Medicine & Practices as Pain Physician.",
+    description: "Dr. Shubhada Jade(Mohabe) has done MBBS MD Anaesthesia, Passionate about her clinical skills... Also done Fellowship in Palliative Care & Practices as Pain Physician.",
     certifications: [
       "FIPM",
       "ISSP -29/2",
